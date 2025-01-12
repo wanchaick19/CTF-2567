@@ -4,5 +4,5 @@ import "gorm.io/gorm"
 
 type Keys struct {
 	gorm.Model
-	Key string
+	Key string `json:"Key"`
 }	
