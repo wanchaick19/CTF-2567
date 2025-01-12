@@ -48,7 +48,33 @@ async function CheckAjanParin(data: any) {
 }
 
 
+
+//==================================== por ==========================================
+async function GetKeyLevel5() {
+  const requestOptions = {
+    method: "GET",
+  };
+
+  try {
+    const response = await fetch(`${apiUrl}/get-key-level5`, requestOptions);
+    const data = await response.json();
+
+    return {
+      status: response.ok,
+      data: data,
+      message: response.ok ? data.message : data.error,
+    };
+  } catch (error) {
+    return {
+      status: false,
+      message: "An error occurred",
+    };
+  }
+}
 export {
   AjanParin,
   CheckAjanParin,
+
+
+  GetKeyLevel5,
 };

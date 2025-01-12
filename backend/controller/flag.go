@@ -86,3 +86,69 @@ func CheckAjanParin(c *gin.Context) {
 	})
 }
 
+//========================================================== por ============================================================
+func CheckKeyLevel5(c *gin.Context) {
+	var request struct {
+		Answer string `json:"KeyLevel6"` // ใช้ JSON tag สำหรับการแปลงค่าจาก JSON
+	}
+
+	// Bind JSON payload
+	if err := c.ShouldBindJSON(&request); err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": "Invalid input: " + err.Error()})
+		return
+	}
+
+	// Define a struct to hold the result set from the database
+	var flag struct {
+		Flag string `json:"flag"`
+	}
+
+	// Get the database connection
+	db := config.DB()
+
+	// Query the database to get the correct answer
+	if err := db.Table("flags").
+		Select("flags.flag").
+		Where("flags.id = ?", 4). 
+		Scan(&flag).Error; err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to retrieve correct answer: " + err.Error()})
+		return
+	}
+
+	// ตรวจสอบคำตอบ
+	if request.Answer == flag.Flag {
+		c.JSON(http.StatusOK, gin.H{
+			"message": "correct", 
+		})
+		return
+	}
+
+	c.JSON(http.StatusOK, gin.H{
+		"message": "wrong",
+	})
+}
+
+func GetkeyLevel5(c *gin.Context) {
+
+	// Define a struct to hold the result set
+	var flag struct {
+		Key 	string 			
+	}
+
+	// Get the database connection
+	db := config.DB()
+
+	results := db.Table("keys").
+		Select("keys.key").
+		Where("keys.id = 4 "). 
+		Scan(&flag) 
+
+	// Check for errors in the query
+	if results.Error != nil {
+		c.JSON(http.StatusNotFound, gin.H{"error": results.Error.Error()})
+		return
+	}
+
+	// Return the results as JSON
+	c.JSON(http.StatusOK, flag)
+}
