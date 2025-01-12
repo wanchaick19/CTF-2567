@@ -3,6 +3,12 @@
 body{
     margin: 0;
 }
+*{
+    scrollbar-width: none;
+}
+*::selection{
+    background-color: #d1cb95a5;
+}
 :root {
     --G1: #40985E;
     --G2: #1A644E;
