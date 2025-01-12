@@ -54,6 +54,7 @@ const Level5: React.FC = () => {
             if (res.data.message === "correct") {
                 message.success("เก่งมาก 🥳👏🏻")
                 setMessage(true)
+                localStorage.setItem("Level-5", "ture");
             } else {
                 message.error("ผิดจ้า 🥹")
             }
