@@ -9,12 +9,12 @@ import (
 )
 
 // GET /genders
-func ListGenders(c *gin.Context) {
-	var genders []entity.Gender
+func ListFlags(c *gin.Context) {
+	var flags []entity.Flags
 
 	db := config.DB()
 
-	db.Find(&genders)
+	db.Find(&flags)
 
-	c.JSON(http.StatusOK, &genders)
+	c.JSON(http.StatusOK, &flags)
 }

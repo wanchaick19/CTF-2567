@@ -22,18 +22,7 @@ func main() {
 
 	r.Use(CORSMiddleware())
 
-	router := r.Group("")
-	{
-
-		// User Routes
-		router.GET("/users", controller.ListUsers)
-		router.GET("/user/:id", controller.GetUser)
-		router.POST("/users", controller.CreateUser)
-		router.PATCH("/users", controller.UpdateUser)
-		router.DELETE("/users/:id", controller.DeleteUser)
-		// Gender Routes
-		router.GET("/genders", controller.ListGenders)
-	}
+	r.POST("/flags", controller.ListFlags)
 
 	r.GET("/", func(c *gin.Context) {
 		c.String(http.StatusOK, "API RUNNING... PORT: %s", PORT)
