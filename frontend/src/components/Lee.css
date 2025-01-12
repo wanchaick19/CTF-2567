@@ -1,0 +1,33 @@
+.box {
+    background-color: #0a1a2f;
+    color: #40985e    ;
+    width: 60%;
+    padding: 0px;
+    margin-top: 0%;
+    margin-left: 20%;
+    margin-right: 20%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+.hidden_wall{
+    color: #0a1a2f;
+}
+.str{
+    color: #d1cb95;
+}
+.btn_bg{
+    background-color: #0a1a2f;
+    width: 60%;
+    padding: 0px;
+    margin-top: 0%;
+    margin-left: 20%;
+    margin-right: 20%;
+    display: flex;
+    justify-content: center;
+}
+.btn{
+    background-color: #1a644e;
+    color: #d1cb95;
+}
+
