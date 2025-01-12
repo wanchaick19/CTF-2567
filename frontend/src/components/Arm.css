@@ -1,0 +1,67 @@
+
+:root {
+    --G1: #40985E;
+    --G2: #1A644E;
+    --G3: #04373B;
+    --G4: #0A1A2F;
+    --P1: #D1CB95;
+  }
+.Level3{
+    background-color: var(--G3);
+    padding: 10% 0;
+}
+.ajanparinPicture{
+    width: 500px;
+    margin: 0 auto;
+    text-align: center;
+    color: var(--P1);
+}
+.ajanparinPicture img{
+    width: 200px;
+    border-radius: 10px ;
+    box-shadow: 0 0 5px var(--P1);
+}
+.additional-image {
+    width: 100%; 
+    max-width: 100px;
+    height: auto; 
+    border-radius: 10px; 
+}
+
+.answer-section {
+    margin-top: 20px;
+  }
+  
+  .answer-input {
+    padding: 10px;
+    font-size: 16px;
+    margin-right: 10px;
+  }
+  
+  .submit-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007bff;
+    transition: 0.3s ease-in-out;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .submit-button:hover {
+    background-color: var(--P1);
+  }
+  
+  .link-section {
+    margin-top: 20px;
+  }
+  
+  .external-link {
+    color: var(--P1);
+    text-decoration: none;
+    font-size: 16px;
+  }
+  
+  .external-link:hover {
+    text-decoration: underline;
+  }

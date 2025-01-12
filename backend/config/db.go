@@ -28,6 +28,7 @@ func SetupDatabase() {
 	db.AutoMigrate(
 		&entity.Flags{},
 		&entity.Keys{},
+		&entity.User{},
 	)
 
 		// Insert default tags
