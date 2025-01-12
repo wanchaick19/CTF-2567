@@ -2,21 +2,36 @@ import React, { useEffect, useState } from 'react';
 import { message } from "antd";
 import './por.css';
 import { CheckLevel5, GetKeyLevel5 } from '../services/https';
+import Pic from '../assets/Help.png';
 
 const Level5: React.FC = () => {
     //Hide message
     const [Massage, setMessage] = useState(false);
+    
     //GetKeyLevel5
     useEffect(() => {
         GetKeyLevel5();
     }, []);
     const ClickHutaoToGetthekey = async () => {
-        message.success("ตึก F12 แต่ไม่ใช่ตึก")
+        message.success("F12 ที่ไม่ใช่ตึก F12")
+        GetKeyLevel5();
+    };
+    const Hint1 = async () => {
+        message.success("รูปไวไฟหน้าตาเป็นยังไงน้า")
+        GetKeyLevel5();
+    };
+    const Hint2 = async () => {
+        message.success("เรากำลังจะแอบดูใครกันนะ")
+        GetKeyLevel5();
+    };
+    const Hint3 = async () => {
+        message.success("ถ้ามี private key ละก็")
         GetKeyLevel5();
     };
 
     const gettheFkey = async () => {
-        message.success("2c70e12b7a0646f92279f427c7b38e7334d8e5389cff167a1dc30e73f826b683")
+        success();
+        GetKeyLevel5();
     }
     const [FormLevel5, setFormLevel5] = useState({
         key: '',
@@ -46,8 +61,21 @@ const Level5: React.FC = () => {
 
         console.log("hello")
     }
+    //====================================================== message ==============================================
+    const [messageApi, contextHolder] = message.useMessage();
+    const success = () => {
+        messageApi
+            .open({
+            type: 'loading',
+            content: '😁รอแปป....',
+            duration: 2.5,
+            })
+            .then(() => message.info('กำลังหา Key ให้นะ ', 2.5))
+            .then(() => message.success('อะนี่! เอาไปใช้เลย : 2c70e12b7a0646f92279f427c7b38e7334d8e5389cff167a1dc30e73f826b683', 5));
+    };
     return (
         <>
+            {contextHolder}
             <div className='blackgroundLevel5'>
                 <h1 className='Level5'>LEVEL5</h1>
                 <div className='Phone'>
@@ -152,7 +180,17 @@ const Level5: React.FC = () => {
                             </>
                         }
                     </div>
+                    <div className='BottomPhone'>
+                        <img onClick={Hint1} height={50} src="https://static.vecteezy.com/system/resources/previews/005/988/950/non_2x/photo-camera-icon-free-vector.jpg" alt="" />
+                        <img onClick={Hint2} height={40} src="https://icons.iconarchive.com/icons/praveen/minimal-outline/512/gallery-icon.png" alt="" />
+                        <div onClick={Hint3} className='Messagebar'>Message</div>
+                    </div>
                 </div>
+                <div className='help'>
+                    <img src={Pic}  onClick={gettheFkey} />
+                    <div className='Sos'>Help</div>
+                </div>
+
                 <div style={{ margin: '0 10%' }}>
                     <h2 style={{ color: 'var(--P1)', fontSize: '40px' }} onClick={gettheFkey} >สองคนนี่คุยอะไรกันอยู่นะ</h2>
                     <a href='https://youtu.be/dQw4w9WgXcQ?si=BCURQaHpP4sGTane' style={{ color: 'var(--P1)', textDecoration: 'none', fontSize: '24px' }} >ด่านนี้จะให้คุณสวมบทบาทเป็น Man In The Middle เพื่อดูว่าสองคนนี้ เค้ากำลัง คุยอะไรกันอยู่ แต่เดี๋ยวนะ !!! ทำไมข้อความเป็นแบบนี้ อ่านไม่ออกเลย หรือว่า หรือว่าาาา ต้องจิ้มที่ข้อความนี้ดูกันนะ</a>
