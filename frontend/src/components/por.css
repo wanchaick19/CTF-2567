@@ -168,3 +168,22 @@ body{
 .Sos:hover {
     text-shadow: 0 0 10px var(--P1);
 }
+
+.SwitchSPhone{
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--P1);
+    border:2px solid var(--P1);
+    text-align: center;
+    width: 300px;
+    margin: 0 auto;
+    padding: 10px 0px;
+    border-radius: 20px;
+    transition: 0.4s ease-in-out;
+    cursor: pointer;
+}
+
+.SwitchSPhone:hover{
+    background-color: var(--P1);
+    color: var(--G4);
+}
