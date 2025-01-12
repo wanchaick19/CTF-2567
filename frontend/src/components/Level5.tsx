@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { message } from "antd";
 import './por.css';
-import { GetKeyLevel5 } from '../services/https';
+import { CheckLevel5, GetKeyLevel5 } from '../services/https';
 
 const Level5: React.FC = () => {
     //GetKeyLevel5
@@ -29,7 +29,19 @@ const Level5: React.FC = () => {
             window.location.href = "https://youtu.be/dQw4w9WgXcQ?si=BCURQaHpP4sGTane";
         }else if (FormLevel5.key == "") {
             message.info("The KEY : 2c70e12b7a0646f92279f427c7b38e7334d8e5389cff167a1dc30e73f826b683")
+        }else{
+            const AnswerToSend = {
+                KeyLevel6: FormLevel5.key
+            }
+            const res = await CheckLevel5(AnswerToSend);
+        if (res.data.message === "correct") {
+            message.success("เก่งมาก 🥳👏🏻")
+        }else {
+            message.error("ผิดจ้า 🥹")
         }
+
+        }
+
         console.log("hello")
     }
     return (

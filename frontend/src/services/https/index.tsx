@@ -71,10 +71,22 @@ async function GetKeyLevel5() {
     };
   }
 }
+async function CheckLevel5(data: any) {
+
+  return await axios
+
+    .put(`${apiUrl}/check-key-level5`, data, requestOptions)
+
+    .then((res) => res)
+
+    .catch((e) => e.response);
+
+}
 export {
   AjanParin,
   CheckAjanParin,
 
 
   GetKeyLevel5,
+  CheckLevel5,
 };
