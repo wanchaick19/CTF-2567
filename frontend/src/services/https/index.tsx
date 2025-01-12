@@ -1,17 +1,24 @@
-import { UsersInterface } from "../../interfaces/IUser";
+import axios from "axios";
 
 const apiUrl = "http://localhost:8000";
 
-async function GetUsers() {
+const requestOptions = {
+
+  headers: {
+
+    "Content-Type": "application/json",
+
+  },
+
+};
+
+async function AjanParin() {
   const requestOptions = {
     method: "GET",
-    headers: {
-      "Content-Type": "application/json",
-    },
   };
 
   try {
-    const response = await fetch(`${apiUrl}/users`, requestOptions);
+    const response = await fetch(`${apiUrl}/ajanparin`, requestOptions);
     const data = await response.json();
 
     return {
@@ -27,16 +34,29 @@ async function GetUsers() {
   }
 }
 
-async function GetGenders() {
+
+async function CheckAjanParin(data: any) {
+
+  return await axios
+
+    .put(`${apiUrl}/checkajanparin`, data, requestOptions)
+
+    .then((res) => res)
+
+    .catch((e) => e.response);
+
+}
+
+
+
+//==================================== por ==========================================
+async function GetKeyLevel5() {
   const requestOptions = {
     method: "GET",
-    headers: {
-      "Content-Type": "application/json",
-    },
   };
 
   try {
-    const response = await fetch(`${apiUrl}/genders`, requestOptions);
+    const response = await fetch(`${apiUrl}/get-key-level5`, requestOptions);
     const data = await response.json();
 
     return {
@@ -51,101 +71,22 @@ async function GetGenders() {
     };
   }
 }
+async function CheckLevel5(data: any) {
 
-async function DeleteUserByID(id: Number | undefined) {
-  const requestOptions = {
-    method: "DELETE",
-  };
+  return await axios
 
-  try {
-    const response = await fetch(`${apiUrl}/users/${id}`, requestOptions);
-    const data = await response.json();
+    .put(`${apiUrl}/check-key-level5`, data, requestOptions)
 
-    return {
-      status: response.ok,
-      message: response.ok ? data.message : data.error,
-    };
-  } catch (error) {
-    return {
-      status: false,
-      message: "An error occurred",
-    };
-  }
+    .then((res) => res)
+
+    .catch((e) => e.response);
+
 }
-
-async function GetUserById(id: Number | undefined) {
-  const requestOptions = {
-    method: "GET",
-  };
-
-  try {
-    const response = await fetch(`${apiUrl}/user/${id}`, requestOptions);
-    const data = await response.json();
-
-    return {
-      status: response.ok,
-      data: data,
-      message: response.ok ? data.message : data.error,
-    };
-  } catch (error) {
-    return {
-      status: false,
-      message: "An error occurred",
-    };
-  }
-}
-
-async function CreateUser(data: UsersInterface) {
-  const requestOptions = {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(data),
-  };
-
-  try {
-    const response = await fetch(`${apiUrl}/users`, requestOptions);
-    const data = await response.json();
-
-    return {
-      status: response.ok,
-      message: response.ok ? data.message : data.error,
-    };
-  } catch (error) {
-    return {
-      status: false,
-      message: "An error occurred",
-    };
-  }
-}
-
-async function UpdateUser(data: UsersInterface) {
-  const requestOptions = {
-    method: "PATCH",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(data),
-  };
-
-  try {
-    const response = await fetch(`${apiUrl}/users`, requestOptions);
-    const data = await response.json();
-
-    return {
-      status: response.ok,
-      message: response.ok ? data.message : data.error,
-    };
-  } catch (error) {
-    return {
-      status: false,
-      message: "An error occurred",
-    };
-  }
-}
-
 export {
-  GetUsers,
-  CreateUser,
-  GetGenders,
-  DeleteUserByID,
-  GetUserById,
-  UpdateUser,
+  AjanParin,
+  CheckAjanParin,
+
+
+  GetKeyLevel5,
+  CheckLevel5,
 };

@@ -24,6 +24,16 @@ func main() {
 
 	r.POST("/flags", controller.ListFlags)
 
+	r.GET("/ajanparin", controller.AjanParin)
+	
+	r.PUT("/checkajanparin", controller.CheckAjanParin)
+	
+	
+	
+	r.GET("/get-key-level5", controller.GetkeyLevel5)
+
+	r.PUT("/check-key-level5", controller.CheckKeyLevel5)
+
 	r.GET("/", func(c *gin.Context) {
 		c.String(http.StatusOK, "API RUNNING... PORT: %s", PORT)
 	})
