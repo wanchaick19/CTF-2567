@@ -6,7 +6,7 @@ import {
 } from "react-router-dom";
 
 import Main from "./pages/Game/Main";
-
+import "./index.css";
 
 const App: React.FC = () => {
 
