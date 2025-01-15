@@ -46,7 +46,16 @@ async function CheckAjanParin(data: any) {
     .catch((e) => e.response);
 
 }
+//==================================== Lee ==========================================
 
+async function CheckFish(data:any) {
+  return await axios
+  .put(`${apiUrl}/CheckFish`, data, requestOptions)
+  
+  .then((res) => res)
+
+  .catch((e) => e.response);
+}
 
 
 //==================================== por ==========================================
@@ -86,6 +95,7 @@ export {
   AjanParin,
   CheckAjanParin,
 
+  CheckFish,
 
   GetKeyLevel5,
   CheckLevel5,
