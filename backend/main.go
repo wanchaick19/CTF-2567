@@ -28,7 +28,13 @@ func main() {
 
 	r.PUT("/checkajanparin", controller.CheckAjanParin)
 
+	r.GET("/lv1-encrypted-text", controller.GetLV1EncryptedText)
+
+	r.PUT("/lv1-check-ans", controller.Lv1CheckAns)
+
 	r.GET("/get-key-level5", controller.GetkeyLevel5)
+
+	r.GET("/get-key-level5", controller.GetkeyLevel5) // 5
 
 	r.PUT("/check-key-level5", controller.CheckKeyLevel5)
 
