@@ -3,6 +3,12 @@
 body{
     margin: 0;
 }
+*{
+    scrollbar-width: none;
+}
+*::selection{
+    background-color: #d1cb95a5;
+}
 :root {
     --G1: #40985E;
     --G2: #1A644E;
@@ -22,7 +28,7 @@ body{
 }
 .Phone {
     width: 23%;
-    height: 500px;
+    height: 600px;
     background-color: #fff;
     box-shadow: 0 0 5px #0000003a;
     border-radius: 15px;
@@ -32,6 +38,10 @@ body{
     display: flex;
     flex-direction: column;
     border: 8px solid #171717;
+    animation: Phone 5s ease-in-out infinite;
+}
+@keyframes Phone {
+    50%{transform: translateY(-5%);}
 }
 .PhoneHead {
     background-color: #F6F6F6;
@@ -47,6 +57,7 @@ body{
     margin: 0 auto;
     border-radius: 50%;
     box-shadow: 0 0 5px #0000003a;
+    cursor: not-allowed;
 }
 .PhoneHead p {
     margin: 0;
@@ -83,6 +94,24 @@ body{
     border-radius: 0 10px 10px 10px;
     word-wrap: break-word;
 }
+.BottomPhone{
+    height: 50px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+.Messagebar{
+    background-color: #F6F6F6;
+    padding: 10px 15px;
+    width: 60%;
+    border-radius: 20px;
+    color: #a7a7a7;
+    border: 2px solid #d7d7d7;
+}
+.BottomPhone img{
+    opacity: 0.7;
+}
+
 .inputLevel5{
     height: 40px;
     width: 400px;
@@ -109,4 +138,75 @@ body{
 .submitLevel5:hover{
     background-color: var(--G1);
     box-shadow: 0 0 10px var(--P1);
+}
+
+
+.help{
+    position: absolute;
+    right: 10px;
+    transform: translate(0 , -110%);
+    transition: 0.8s ease-in-out;
+}
+.help:hover img{
+    opacity: 1;
+    width: 500px;
+    transition: 0.8s ease-in-out;
+}
+.help img{
+    opacity: 0;
+    width: 300px;
+}
+
+.Sos{
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--P1);
+    cursor: pointer;
+    transform: translate(0px , -100px);
+    transition: 0.6s ease-in-out;
+}
+.Sos:hover {
+    text-shadow: 0 0 10px var(--P1);
+}
+
+.SwitchSPhone{
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--P1);
+    border:2px solid var(--P1);
+    text-align: center;
+    width: 300px;
+    margin: 0 auto;
+    padding: 10px 0px;
+    border-radius: 20px;
+    transition: 0.4s ease-in-out;
+    cursor: pointer;
+}
+
+.SwitchSPhone:hover{
+    background-color: var(--P1);
+    color: var(--G4);
+}
+
+.inputpayment{
+    background-color: #F6F6F6;
+    padding: 10px 15px;
+    width: 60%;
+    border-radius: 20px;
+    color: #a7a7a7;
+    border: 2px solid #d7d7d7;
+}
+.send{
+    padding: 10px 15px;
+    border-radius: 20px;
+    color: #fff;
+    border: 2px solid #0C83FF;
+    background-color: #0C83FF;
+    margin-left: 5px;
+    cursor: pointer;
+    transition: 0.4s ease-in-out;
+}
+.send:hover {
+    background-color: #056cda;
+    border: 2px solid #056cda;
 }

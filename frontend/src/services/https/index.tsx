@@ -111,6 +111,41 @@ async function CheckLevel5(data: any) {
     .catch((e) => e.response);
 
 }
+
+async function GetKeyLevel6() {
+
+  return await axios
+
+    .get(`${apiUrl}/get-key-level6`, requestOptions)
+
+    .then((res) => res)
+
+    .catch((e) => e.response);
+
+}
+async function CheckLevel6(data: any) {
+
+  return await axios
+
+    .put(`${apiUrl}/check-help-level6`, data, requestOptions)
+
+    .then((res) => res)
+
+    .catch((e) => e.response);
+
+}
+
+async function CheckLevel62(data: any) {
+
+  return await axios
+
+    .put(`${apiUrl}/check-key-level6`, data, requestOptions)
+
+    .then((res) => res)
+
+    .catch((e) => e.response);
+
+}
 export {
   AjanParin,
   CheckAjanParin,
@@ -118,4 +153,8 @@ export {
   Lv1CheckAns,
   GetKeyLevel5,
   CheckLevel5,
+
+  GetKeyLevel6,
+  CheckLevel6,
+  CheckLevel62,
 };

@@ -4,5 +4,5 @@ import "gorm.io/gorm"
 
 type Flags struct {
 	gorm.Model
-	Flag string
+	Flag string `json:"Flag"`
 }	

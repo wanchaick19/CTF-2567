@@ -217,3 +217,101 @@ func GetkeyLevel5(c *gin.Context) {
 	// Return the results as JSON
 	c.JSON(http.StatusOK, flag)
 }
+
+func CheckKeyLevel6(c *gin.Context) {
+	var request struct {
+		Answer string `json:"Answer6"` // ใช้ JSON tag สำหรับการแปลงค่าจาก JSON
+	}
+
+	// Bind JSON payload
+	if err := c.ShouldBindJSON(&request); err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": "Invalid input: " + err.Error()})
+		return
+	}
+
+	// Define a struct to hold the result set from the database
+	var flag struct {
+		Flag string `json:"flag"`
+	}
+
+	// Get the database connection
+	db := config.DB()
+
+	// Query the database to get the correct answer
+	if err := db.Table("flags").
+		Select("flags.flag").
+		Where("flags.id = ?", 5).
+		Scan(&flag).Error; err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to retrieve correct answer: " + err.Error()})
+		return
+	}
+
+	// ตรวจสอบคำตอบ
+	if request.Answer == flag.Flag {
+		c.JSON(http.StatusOK, gin.H{
+			"message": "correct",
+		})
+		return
+	}
+
+	c.JSON(http.StatusOK, gin.H{
+		"message": "wrong",
+	})
+}
+
+func CheckKeyLevel62(c *gin.Context) {
+	var request struct {
+		Answer string `json:"Answer62"` // ใช้ JSON tag สำหรับการแปลงค่าจาก JSON
+	}
+
+	// Bind JSON payload
+	if err := c.ShouldBindJSON(&request); err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": "Invalid input: " + err.Error()})
+		return
+	}
+
+	// Define a struct to hold the result set from the database
+	var flag struct {
+		Flag string `json:"flag"`
+	}
+
+	// Get the database connection
+	db := config.DB()
+
+	// Query the database to get the correct answer
+	if err := db.Table("flags").
+		Select("flags.flag").
+		Where("flags.id = ?", 6).
+		Scan(&flag).Error; err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to retrieve correct answer: " + err.Error()})
+		return
+	}
+
+	// ตรวจสอบคำตอบ
+	if request.Answer == flag.Flag {
+		c.JSON(http.StatusOK, gin.H{
+			"message": "correct",
+		})
+		return
+	}
+
+	c.JSON(http.StatusOK, gin.H{
+		"message": "wrong",
+	})
+}
+
+func GetkeyLevelHelp6(c *gin.Context) {
+
+	var Keys entity.Keys
+
+	db := config.DB()
+
+	results := db.Select("id, key").Where("id = ?", 5).Find(&Keys)
+
+	if results.Error != nil {
+		c.JSON(http.StatusNotFound, gin.H{"error": results.Error.Error()})
+		return
+	}
+
+	c.JSON(http.StatusOK, Keys)
+}
