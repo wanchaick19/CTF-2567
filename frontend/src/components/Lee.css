@@ -7,6 +7,7 @@ body{
     --G3: #04373B;
     --G4: #0A1A2F;
     --P1: #D1CB95;
+    --F1: "Lucida Console", "Courier New", monospace;
   }
 .bg{
     background-color: var(--G4);
@@ -24,12 +25,47 @@ body{
     justify-content: center;
     text-align: center;
 }
+.box-left {
+    background-color: #0a1a2f;
+    border-style: inset double solid double;
+    border-color: #ffcc00;
+    width: 30%;
+    padding: 0px;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    margin-top: 0%;
+    margin-left: 35%;
+    margin-right: 35%;
+    display: flex;
+    justify-content: left;
+    text-align: left;
+}
+.major-order-text{
+    font-family:var(--F1);
+    color: #ffcc00;
+    margin-left: 2%;
+    margin-right: 2%;
+    white-space: pre-line;
+}
+
+
 .hidden_wall{
-    color: #0a1a2f;
+    color: #0d213c;
+    text-align: center;
 }
 .str{
+    font-family: var(--F1);
     color: #d1cb95;
 }
+
+
+/* enText style*/
+.enText_style{
+    color: #ffcc00;
+}
+
+
+/*  Normal btn   */
 .btn_bg{
     background-color: #0a1a2f;
     width: 60%;
@@ -39,9 +75,40 @@ body{
     margin-right: 20%;
     display: flex;
     justify-content: center;
+    
 }
 .btn{
     background-color: #1a644e;
+    margin: 10px;
+    
+}
+.btn_text{
     color: #d1cb95;
+    font-family: var(--F1);
 }
 
+
+/*  Submit btn   */
+.btn_submit{
+    background-color: rgb(183, 30, 30);
+    margin: 10px;
+    
+}
+
+.btn_text_submit{
+    
+    color: white;
+    font-family: var(--F1);
+}
+/* Skip Level btn */
+.btn_skip{
+    background-color: rgb(30, 183, 76);
+    margin: 10px;
+    
+}
+
+.btn_text_skip{
+    
+    color: white;
+    font-family: var(--F1);
+}

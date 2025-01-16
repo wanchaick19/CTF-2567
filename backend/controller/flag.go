@@ -23,7 +23,7 @@ func FlagAjanParin(c *gin.Context) {
 
 	// Define a struct to hold the result set
 	var flag struct {
-		Flag 	string 			
+		Flag string
 	}
 
 	// Get the database connection
@@ -31,8 +31,8 @@ func FlagAjanParin(c *gin.Context) {
 
 	results := db.Table("flags").
 		Select("flags.flag").
-		Where("flags.id = 3 "). 
-		Scan(&flag) 
+		Where("flags.id = 3 ").
+		Scan(&flag)
 
 	// Check for errors in the query
 	if results.Error != nil {
@@ -43,7 +43,6 @@ func FlagAjanParin(c *gin.Context) {
 	// Return the results as JSON
 	c.JSON(http.StatusOK, flag)
 }
-
 
 func CheckAjanParin(c *gin.Context) {
 	var request struct {
@@ -67,7 +66,7 @@ func CheckAjanParin(c *gin.Context) {
 	// Query the database to get the correct answer
 	if err := db.Table("flags").
 		Select("flags.flag").
-		Where("flags.id = ?", 3). 
+		Where("flags.id = ?", 3).
 		Scan(&flag).Error; err != nil {
 		c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to retrieve correct answer: " + err.Error()})
 		return
@@ -76,7 +75,7 @@ func CheckAjanParin(c *gin.Context) {
 	// ตรวจสอบคำตอบ
 	if request.Answer == flag.Flag {
 		c.JSON(http.StatusOK, gin.H{
-			"message": "correct", 
+			"message": "correct",
 		})
 		return
 	}
@@ -86,13 +85,12 @@ func CheckAjanParin(c *gin.Context) {
 	})
 }
 
-
 //Leeee
 
-func GetLV1EncryptedText(c *gin.Context){
+func GetLV1EncryptedText(c *gin.Context) {
 	// Define a struct to hold the result set
 	var flag struct {
-		Flag 	string 			
+		Flag string
 	}
 
 	// Get the database connection
@@ -100,8 +98,8 @@ func GetLV1EncryptedText(c *gin.Context){
 
 	results := db.Table("flags").
 		Select("flags.flag").
-		Where("flags.id = 5 "). 
-		Scan(&flag) 
+		Where("flags.id = 5 ").
+		Scan(&flag)
 
 	// Check for errors in the query
 	if results.Error != nil {
@@ -112,8 +110,48 @@ func GetLV1EncryptedText(c *gin.Context){
 	// Return the results as JSON
 	c.JSON(http.StatusOK, flag)
 }
+func Lv1CheckAns(c *gin.Context) {
+	var request struct {
+		Answer string `json:"Answer"` // ใช้ JSON tag สำหรับการแปลงค่าจาก JSON
+	}
 
-//========================================================== por ============================================================
+	// Bind JSON payload
+	if err := c.ShouldBindJSON(&request); err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": "Invalid input: " + err.Error()})
+		return
+	}
+
+	// Define a struct to hold the result set from the database
+	var key struct {
+		Key string `json:"key"`
+	}
+
+	// Get the database connection
+	db := config.DB()
+
+	// Query the database to get the correct answer
+	if err := db.Table("keys").
+		Select("keys.key").
+		Where("keys.id = ?", 5).
+		Scan(&key).Error; err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to retrieve correct answer: " + err.Error()})
+		return
+	}
+
+	// ตรวจสอบคำตอบ
+	if request.Answer == key.Key {
+		c.JSON(http.StatusOK, gin.H{
+			"message": "C",
+		})
+		return
+	}
+
+	c.JSON(http.StatusOK, gin.H{
+		"message": "wrong",
+	})
+}
+
+// ========================================================== por ============================================================
 func CheckKeyLevel5(c *gin.Context) {
 	var request struct {
 		Answer string `json:"KeyLevel6"` // ใช้ JSON tag สำหรับการแปลงค่าจาก JSON
@@ -136,7 +174,7 @@ func CheckKeyLevel5(c *gin.Context) {
 	// Query the database to get the correct answer
 	if err := db.Table("flags").
 		Select("flags.flag").
-		Where("flags.id = ?", 4). 
+		Where("flags.id = ?", 4).
 		Scan(&flag).Error; err != nil {
 		c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to retrieve correct answer: " + err.Error()})
 		return
@@ -145,7 +183,7 @@ func CheckKeyLevel5(c *gin.Context) {
 	// ตรวจสอบคำตอบ
 	if request.Answer == flag.Flag {
 		c.JSON(http.StatusOK, gin.H{
-			"message": "correct", 
+			"message": "correct",
 		})
 		return
 	}
@@ -159,7 +197,7 @@ func GetkeyLevel5(c *gin.Context) {
 
 	// Define a struct to hold the result set
 	var flag struct {
-		Key 	string 			
+		Key string
 	}
 
 	// Get the database connection
@@ -167,8 +205,8 @@ func GetkeyLevel5(c *gin.Context) {
 
 	results := db.Table("keys").
 		Select("keys.key").
-		Where("keys.id = 4 "). 
-		Scan(&flag) 
+		Where("keys.id = 4 ").
+		Scan(&flag)
 
 	// Check for errors in the query
 	if results.Error != nil {

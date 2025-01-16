@@ -69,6 +69,15 @@ async function  Lv1GetEncryptText() {
   }
 }
 
+async function Lv1CheckAns(data: any){
+  return await axios
+  .put(`${apiUrl}/lv1-check-ans`,data,requestOptions)
+
+  .then((res)=> res)
+
+  .catch((e)=> e.response)
+}
+
 //==================================== por ==========================================
 async function GetKeyLevel5() {
   const requestOptions = {
@@ -106,7 +115,7 @@ export {
   AjanParin,
   CheckAjanParin,
   Lv1GetEncryptText,
-
+  Lv1CheckAns,
   GetKeyLevel5,
   CheckLevel5,
 };

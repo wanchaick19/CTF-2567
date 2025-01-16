@@ -7,12 +7,11 @@ import (
 	"github.com/tanapon395/sa-67-example/config"
 )
 
-
 func AjanParin(c *gin.Context) {
 
 	// Define a struct to hold the result set
 	var flag struct {
-		Key 	string 			
+		Key string
 	}
 
 	// Get the database connection
@@ -20,8 +19,8 @@ func AjanParin(c *gin.Context) {
 
 	results := db.Table("keys").
 		Select("keys.key").
-		Where("keys.id = 3 "). 
-		Scan(&flag) 
+		Where("keys.id = 3 ").
+		Scan(&flag)
 
 	// Check for errors in the query
 	if results.Error != nil {
