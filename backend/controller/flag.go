@@ -86,6 +86,33 @@ func CheckAjanParin(c *gin.Context) {
 	})
 }
 
+
+//Leeee
+
+func GetLV1EncryptedText(c *gin.Context){
+	// Define a struct to hold the result set
+	var flag struct {
+		Flag 	string 			
+	}
+
+	// Get the database connection
+	db := config.DB()
+
+	results := db.Table("flags").
+		Select("flags.flag").
+		Where("flags.id = 5 "). 
+		Scan(&flag) 
+
+	// Check for errors in the query
+	if results.Error != nil {
+		c.JSON(http.StatusNotFound, gin.H{"error": results.Error.Error()})
+		return
+	}
+
+	// Return the results as JSON
+	c.JSON(http.StatusOK, flag)
+}
+
 //========================================================== por ============================================================
 func CheckKeyLevel5(c *gin.Context) {
 	var request struct {
