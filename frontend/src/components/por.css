@@ -15,6 +15,7 @@ body{
     --G3: #04373B;
     --G4: #0A1A2F;
     --P1: #D1CB95;
+    --P2: #FA9EC8;
   }
 .blackgroundLevel5{
     background-color: var(--G2);
@@ -209,4 +210,63 @@ body{
 .send:hover {
     background-color: #056cda;
     border: 2px solid #056cda;
+}
+
+
+
+.paper {
+    width: 50%;
+    margin: 10% auto;
+    font-size: 28px;
+    text-align: center;
+    color: #fff;
+}
+.Data{
+    display: flex;
+    justify-content: center;
+}
+.Data img{
+    width: 300px;
+    cursor: pointer;
+}
+.E{
+    width: 40%;
+    text-align: center;
+}
+.Digets{
+    width: 60%;
+    color: var(--P1);
+}
+.item1{
+    transition: 0.5s ease-in-out;
+    cursor: pointer;
+    font-size: 28px;
+}
+.item1:hover{
+    text-shadow: 0 0 15px var(--P1);
+}
+
+.Ciphertext{
+    margin: 30px 0;
+}
+
+.C{
+    color: var(--P1);
+    display: flex;
+    justify-content: center;
+}
+
+.Csub{
+    margin: 0 10px;
+    color: #FA9EC8;
+    background-color: transparent;
+    border-radius: 20px;
+    border: 3px solid var(--P2);
+    padding: 10px 20px;
+    transition: 0.4s ease-in-out;
+    cursor: pointer;
+}
+.Csub:hover{
+    background-color: var(--P2);
+    color: #000;
 }

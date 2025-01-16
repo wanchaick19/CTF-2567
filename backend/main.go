@@ -40,6 +40,8 @@ func main() {
 	
 	r.PUT("/check-key-level6", controller.CheckKeyLevel62)
 
+	r.PUT("/check-key-level7", controller.CheckKeyLevel7)//7
+
 	r.GET("/", func(c *gin.Context) {
 		c.String(http.StatusOK, "API RUNNING... PORT: %s", PORT)
 	})
