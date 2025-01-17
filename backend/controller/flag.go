@@ -98,7 +98,7 @@ func GetLV1EncryptedText(c *gin.Context) {
 
 	results := db.Table("flags").
 		Select("flags.flag").
-		Where("flags.id = 5 ").
+		Where("flags.id = 7 ").
 		Scan(&flag)
 
 	// Check for errors in the query
@@ -132,7 +132,7 @@ func Lv1CheckAns(c *gin.Context) {
 	// Query the database to get the correct answer
 	if err := db.Table("keys").
 		Select("keys.key").
-		Where("keys.id = ?", 5).
+		Where("keys.id = ?", 6).
 		Scan(&key).Error; err != nil {
 		c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to retrieve correct answer: " + err.Error()})
 		return

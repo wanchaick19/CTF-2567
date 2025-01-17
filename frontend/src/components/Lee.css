@@ -40,13 +40,7 @@ body{
     justify-content: left;
     text-align: left;
 }
-.major-order-text{
-    font-family:var(--F1);
-    color: #ffcc00;
-    margin-left: 2%;
-    margin-right: 2%;
-    white-space: pre-line;
-}
+
 
 
 .hidden_wall{

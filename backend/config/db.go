@@ -53,6 +53,7 @@ func SetupDatabase() {
 		{Key: "key-ajanparin"},
 		{Key: "aHR0cHM6Ly9kb2NzLmdvb2dsZS5jb20vc3ByZWFkc2hlZXRzL2QvMTBmZjBJTXZfS1dQYnJOUThfWnFMcjBfSHN4dkVsZnhUbG56NTBLaDBJRFkvZWRpdD9naWQ9MCNnaWQ9MA=="},
 		{Key: "4LiB4LmH4LmE4LiU4LmJ4LmB4LiE4LmI4LmB4LiB4LmJ4LmC4LiI4LiX4Lii4LmM4LmB4Lil4Liw4LmE4Lih4LmI4LmE4LiU4LmJ4LmB4LiB4LmJ4Lic4LmJ4Liy4LmA4LiE4LmJ4Liy4Lir4Lij4Lit4LiBCgo="},
+		{Key: "CPEZAZA4537"},
 	}
 
 	for _, key := range keys {
