@@ -20,9 +20,9 @@ const Level1: React.FC = () => {
         };
         const res = await Lv1CheckAns(ansToSend);
         if(res.data.message === "C"){
-            messageApi.success("Correcta");
+            messageApi.success("Praying for you 🕯 Oh Great Mila 💗");
         }else{
-            messageApi.error("Wrong!");
+            messageApi.error("Incorrect");
         }
         
     }
@@ -46,7 +46,7 @@ const Level1: React.FC = () => {
                 <div className='btn_bg'>
                     <a href="https://www.youtube.com/watch?v=poa_QBvtIBA" target='_blank'><button className='btn'><p className='btn_text'>key</p></button></a>
                     <a href="https://anycript.com/crypto" target='_black'><button className='btn'><p className='btn_text'>Decrypt</p></button></a>
-                    <button className='btn_submit'><b className='btn_text_submit' onClick={handleAnsSub}>SUBMIT</b></button>
+                    <button className='btn_submit' onClick={handleAnsSub}><b className='btn_text_submit'>SUBMIT</b></button>
                     <a href="https://www.youtube.com/watch?v=RN3QW9SVnds" target='_blank' ><button className='btn_skip'><p className='btn_text_skip'><b>SKIP</b></p></button></a>
                     
                 </div>
@@ -56,7 +56,7 @@ const Level1: React.FC = () => {
                         value={answer}
                         placeholder='DECRYPTED TEXT'
                         onChange={(e) => setAnswer(e.target.value)}
-                        className='btn_text'
+                        className='input-text-sub'
                     />
                     
                 </div></div>

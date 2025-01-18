@@ -1,5 +1,4 @@
 import React,{useState} from "react";
-import { Link } from "react-router-dom";
 import "./Lee.css"
 import "./LeeMajorOrder.css"
 const Level2: React.FC = () => {
@@ -26,17 +25,18 @@ const Level2: React.FC = () => {
                             <li><b>ตามหารหัสยิงที่หายสาบสูญ</b></li></p>
                         </div> 
                         <div className="start-btn-container">
-                            <Link to="./Level2_2" target="_blank">
-                            <button className="startMission-btn" >
-                                <b>
-                                    <p className="startMission-text">
-                                        Start Mission
-                                    </p>
-                                </b>
-                            </button>
-                            </Link>     
+                            <div>
+                                <a href="./Level2_2" target="_blank" className="startMission-btn">
+                                    <button className="startMission-btn">
+                                        <b>
+                                            <p className="startMission-text">
+                                                Start Mission
+                                            </p>
+                                        </b>
+                                    </button>
+                                </a>  
+                            </div>       
                         </div>
-                        
                     </div>
                 
                 <div className="box">

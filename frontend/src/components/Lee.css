@@ -9,6 +9,10 @@ body{
     --P1: #D1CB95;
     --F1: "Lucida Console", "Courier New", monospace;
   }
+.full-bg{
+    background-color: var(--G4);
+    padding: 500px 0;
+}   
 .bg{
     background-color: var(--G4);
     padding: 10% 0;
@@ -25,21 +29,7 @@ body{
     justify-content: center;
     text-align: center;
 }
-.box-left {
-    background-color: #0a1a2f;
-    border-style: inset double solid double;
-    border-color: #ffcc00;
-    width: 30%;
-    padding: 0px;
-    padding-top: 2%;
-    padding-bottom: 2%;
-    margin-top: 0%;
-    margin-left: 35%;
-    margin-right: 35%;
-    display: flex;
-    justify-content: left;
-    text-align: left;
-}
+
 
 
 
@@ -76,6 +66,10 @@ body{
     margin: 10px;
     
 }
+.input-text-sub{
+    color: black;
+    font-family: var(--F1);
+}
 .btn_text{
     color: #d1cb95;
     font-family: var(--F1);
@@ -86,11 +80,11 @@ body{
 .btn_submit{
     background-color: rgb(183, 30, 30);
     margin: 10px;
-    
+ 
+    cursor: pointer;
 }
 
 .btn_text_submit{
-    
     color: white;
     font-family: var(--F1);
 }

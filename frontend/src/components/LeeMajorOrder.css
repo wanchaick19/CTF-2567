@@ -34,17 +34,27 @@
     margin: 2px;
     padding: 20px;
 }
+.input-lunch-code{
+    margin-top: 25px;
+    font-family: var(--F1);
+}
 .start-btn-container{
-    
+    width: auto;
+    margin: 2px;
+    gap: 50px;
 }
 .startMission-btn{
     background-color: var(--G2);
-    display:flex;
-    padding: 2px;
+    display:inline;
+    margin-top: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-decoration: none;
 }
 .startMission-text{
-    padding: 10px;
+    margin: 5px;
+    font-family: var(--F1);
     color: var(--P1);
     text-shadow: 0px 2px black;
-    font-family: var(--F1);
+
 }
