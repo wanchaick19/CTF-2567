@@ -22,11 +22,11 @@ func main() {
 
 	r.Use(CORSMiddleware())
 
-	r.POST("/flags", controller.ListFlags)
+	r.PUT("/checkflaglevel3", controller.ChecFlagLevel3) // 3
 
-	r.GET("/ajanparin", controller.AjanParin)
+	r.GET("/keylevel4", controller.KeyLevel4) //4
 
-	r.PUT("/checkajanparin", controller.CheckAjanParin)
+	r.PUT("/checkflaglevel4", controller.ChecFlagLevel4) //4
 
 	r.GET("/lv1-encrypted-text", controller.GetLV1EncryptedText)
 

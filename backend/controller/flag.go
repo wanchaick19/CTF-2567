@@ -8,43 +8,9 @@ import (
 	"github.com/tanapon395/sa-67-example/entity"
 )
 
-// GET /genders
-func ListFlags(c *gin.Context) {
-	var flags []entity.Flags
+//arm
 
-	db := config.DB()
-
-	db.Find(&flags)
-
-	c.JSON(http.StatusOK, &flags)
-}
-
-func FlagAjanParin(c *gin.Context) {
-
-	// Define a struct to hold the result set
-	var flag struct {
-		Flag string
-	}
-
-	// Get the database connection
-	db := config.DB()
-
-	results := db.Table("flags").
-		Select("flags.flag").
-		Where("flags.id = 3 ").
-		Scan(&flag)
-
-	// Check for errors in the query
-	if results.Error != nil {
-		c.JSON(http.StatusNotFound, gin.H{"error": results.Error.Error()})
-		return
-	}
-
-	// Return the results as JSON
-	c.JSON(http.StatusOK, flag)
-}
-
-func CheckAjanParin(c *gin.Context) {
+func ChecFlagLevel3(c *gin.Context) {
 	var request struct {
 		Answer string `json:"Answer"` // ใช้ JSON tag สำหรับการแปลงค่าจาก JSON
 	}
@@ -66,7 +32,7 @@ func CheckAjanParin(c *gin.Context) {
 	// Query the database to get the correct answer
 	if err := db.Table("flags").
 		Select("flags.flag").
-		Where("flags.id = ?", 3).
+		Where("flags.id = ?", 3). 
 		Scan(&flag).Error; err != nil {
 		c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to retrieve correct answer: " + err.Error()})
 		return
@@ -75,7 +41,48 @@ func CheckAjanParin(c *gin.Context) {
 	// ตรวจสอบคำตอบ
 	if request.Answer == flag.Flag {
 		c.JSON(http.StatusOK, gin.H{
-			"message": "correct",
+			"message": "correct", 
+		})
+		return
+	}
+
+	c.JSON(http.StatusOK, gin.H{
+		"message": "wrong",
+	})
+}
+
+func ChecFlagLevel4(c *gin.Context) {
+	var request struct {
+		Answer string `json:"Answer"` // ใช้ JSON tag สำหรับการแปลงค่าจาก JSON
+	}
+
+	// Bind JSON payload
+	if err := c.ShouldBindJSON(&request); err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": "Invalid input: " + err.Error()})
+		return
+	}
+
+	// Define a struct to hold the result set from the database
+	var flag struct {
+		Flag string `json:"flag"`
+	}
+
+	// Get the database connection
+	db := config.DB()
+
+	// Query the database to get the correct answer
+	if err := db.Table("flags").
+		Select("flags.flag").
+		Where("flags.id = ?", 2). 
+		Scan(&flag).Error; err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to retrieve correct answer: " + err.Error()})
+		return
+	}
+
+	// ตรวจสอบคำตอบ
+	if request.Answer == flag.Flag {
+		c.JSON(http.StatusOK, gin.H{
+			"message": "correct", 
 		})
 		return
 	}
