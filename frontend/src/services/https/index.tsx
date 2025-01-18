@@ -1,3 +1,4 @@
+import { message } from "antd";
 import axios from "axios";
 
 const apiUrl = "http://localhost:8000";
@@ -46,8 +47,36 @@ async function CheckAjanParin(data: any) {
     .catch((e) => e.response);
 
 }
+//==================================== Lee ==========================================
 
+async function  Lv1GetEncryptText() {
+  const requestOptions = {
+    method: "GET",
 
+  };
+  try {
+    const response = await fetch(`${apiUrl}/lv1-encrypted-text`, requestOptions);
+    const data = await response.json();
+
+    return{
+      status: response.ok, data:data, message: response.ok ? data.message : data.error,
+    };
+  }catch(error){
+    return{
+      status: false,
+      message: "Shit happened"
+    };
+  }
+}
+
+async function Lv1CheckAns(data: any){
+  return await axios
+  .put(`${apiUrl}/lv1-check-ans`,data,requestOptions)
+
+  .then((res)=> res)
+
+  .catch((e)=> e.response)
+}
 
 //==================================== por ==========================================
 async function GetKeyLevel5() {
@@ -134,8 +163,8 @@ async function CheckLevel7(data: any) {
 export {
   AjanParin,
   CheckAjanParin,
-
-
+  Lv1GetEncryptText,
+  Lv1CheckAns,
   GetKeyLevel5,
   CheckLevel5,
 

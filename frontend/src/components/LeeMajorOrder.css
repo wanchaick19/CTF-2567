@@ -1,0 +1,61 @@
+:root{
+    --G1: #40985E;
+    --G2: #1A644E;
+    --G3: #04373B;
+    --G4: #0A1A2F;
+    --A1: #D1CB95;
+    --A2: #ffcc00;
+    --F1: "Lucida Console", "Courier New", monospace;
+}
+.MOtext{
+    font-family:var(--F1);
+    color: var(--A2);
+    margin-left: 2%;
+    margin-right: 2%;
+    
+}
+.MOinfoText{
+    color: #acb5c1;
+    text-align:left;
+    
+}
+.MOcard{
+    background-color: #374352;
+    margin-left: 33%;
+    margin-right: 33%;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    padding: 5px;
+    border-color: #acb5c1;
+    border-style: solid;
+}
+.MObg{
+    background-color: #071221;
+    margin: 2px;
+    padding: 20px;
+}
+
+.input-lunch-code{
+    margin-top: 25px;
+    font-family: var(--F1);
+}
+.start-btn-container{
+    width: auto;
+    margin: 2px;
+    gap: 50px;
+}
+.startMission-btn{
+    background-color: var(--G2);
+    display:inline;
+    margin-top: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-decoration: none;
+}
+.startMission-text{
+    margin: 5px;
+    font-family: var(--F1);
+    color: var(--P1);
+    text-shadow: 0px 2px black;
+
+}
