@@ -5,7 +5,7 @@ import { message, Modal } from 'antd';
 import { CheckLevel7 } from '../services/https';
 
 const Level7: React.FC = () => {
-
+    const userLevel7 = localStorage.getItem("Level-7");
 
     const textToCopy = `-----BEGIN RSA PUBLIC KEY-----
 MEgCQQCp1nVuBSC2Nwu138GITvVFUrPAnLd5Tc5pkFUO7hONeShKxq/K2r3W7w6z
@@ -154,7 +154,15 @@ const privateKEY = `-----BEGIN RSA PRIVATE KEY-----MIIBOwIBAAJBAKnWdW4FILY3C7Xfw
 
 
                 <div style={{ display: 'flex', justifyContent: 'center', margin: '10% 0 0' }}>
-                    <img width={300} src="https://www.beartai.com/wp-content/uploads/2022/06/chara_anya_2-1.png" onClick={handleRandomize} />
+                    {userLevel7 ? (
+                        <>
+                            <p>ไม่มีใครอยู่ที่นี่</p>
+                        </>
+                    ) : (
+                        <>
+                            <img width={300} src="https://www.beartai.com/wp-content/uploads/2022/06/chara_anya_2-1.png" onClick={handleRandomize} />
+                        </>
+                    )}
                 </div>
                 <div className='C'>
                     <p className='Csub' onClick={handleRandomize}>คุยกับอาเนียร์</p>
@@ -167,7 +175,7 @@ const privateKEY = `-----BEGIN RSA PRIVATE KEY-----MIIBOwIBAAJBAKnWdW4FILY3C7Xfw
 
                 <Modal title="อาเนียร์อ่านใจได้" open={isModalOpen} onOk={handleOk} onCancel={handleCancel}>
                     <p>เนื่องจาก อาเนียร์สามรถอ่านใจคุณได้และรู้อยู่แล้วว่าคุณต้องการอะไร อาเนียร์ต้องการให้บางสิ่งกับคุณ แต่ดันอ่านใจ คุณไปเมื่อซักครู่ ทำให้อาเนียร์เกิดความกลัวและมอบบางอย่างให้กับคุณก่อนที่จะจากไปตลอดการ</p>
-                    <p onClick={handleCopyPrivatekey}>รับของจากอาเนียร์</p>
+                    <p onClick={handleCopyPrivatekey} style={{backgroundColor:'var(--G1)',padding:'5px 10px',color:'#fff',borderRadius:'10px',cursor:'pointer'}}>รับของจากอาเนียร์</p>
                 </Modal>
 
 

@@ -7,6 +7,7 @@ import Pic from '../assets/Help.png';
 const Level5: React.FC = () => {
     //Hide message
     const [Massage, setMessage] = useState(false);
+    const userLevel5 = localStorage.getItem("Level-5");
     
     //GetKeyLevel5
     useEffect(() => {
@@ -89,7 +90,7 @@ const Level5: React.FC = () => {
                         <p>Hu Tao</p>
                     </div>
                     <div className='Message'>
-                        {Massage ?
+                        {Massage || userLevel5 ?
                             <>
                                 <div className='MessageMeBox'>
                                     <p className='MessageMe'>เธอๆ กินข้าวยัง?</p>

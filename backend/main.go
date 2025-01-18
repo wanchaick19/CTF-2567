@@ -38,6 +38,8 @@ func main() {
 
 	r.GET("/get-key-level6", controller.GetkeyLevelHelp6) // 6
 
+	r.PUT("/check-key-level62", controller.CheckKeyLevel62)
+
 	r.PUT("/check-help-level6", controller.CheckKeyLevel6)
 
 	r.PUT("/check-key-level7", controller.CheckKeyLevel7)//7

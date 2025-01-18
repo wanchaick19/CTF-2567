@@ -141,7 +141,7 @@ async function CheckLevel62(data: any) {
 
   return await axios
 
-    .put(`${apiUrl}/check-key-level6`, data, requestOptions)
+    .put(`${apiUrl}/check-key-level62`, data, requestOptions)
 
     .then((res) => res)
 
