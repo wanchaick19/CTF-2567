@@ -77,7 +77,14 @@ async function Lv1CheckAns(data: any){
 
   .catch((e)=> e.response)
 }
+async function Lv2CheckAns(data:any) {
+  return await axios
+  .put(`${apiUrl}/lv2-check-ans`,data,requestOptions)
 
+  .then((res)=> res)
+
+  .catch((e)=> e.response)
+}
 //==================================== por ==========================================
 async function GetKeyLevel5() {
   const requestOptions = {
@@ -167,7 +174,7 @@ export {
   Lv1CheckAns,
   GetKeyLevel5,
   CheckLevel5,
-
+  Lv2CheckAns,
   GetKeyLevel6,
   CheckLevel6,
   CheckLevel62,

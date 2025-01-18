@@ -18,11 +18,10 @@ const Level2: React.FC = () => {
                             <p className="MOinfoText">&emsp;&emsp;&emsp;เนื่องจากสงครามอันยาวนานในแนวรบฝั่งตะวันตกกับพวก AUTOMATON
                             ในที่สุดทางเบื้องบนก็มีแผนการในการยุติสงครามในครั้งนี้ โดยเราได้รับรายงานจากหน่วยข่าวกรองของ SUPER EARTH 
                             ว่า ณ ดาว AURORA BAY ยังคงมีเครื่องกำเนิดหลุมดำพร้อมกับเครื่องส่งวัตถุข้ามดวงดาว
-                            สภาพพร้อมใช้งานที่ยังไม่ถูกค้นพบ ขาดเพียงแค่พลังงานและรหัสยิง (LunchCode) เพื่อให้ตัวอาวุธพร้อมใช้งาน<br /><br />
+                            สภาพพร้อมใช้งานที่ยังไม่ถูกค้นพบ รหัสยิง (LaunchCode) เพื่อให้ตัวอาวุธพร้อมใช้งาน<br /><br />
                             <b>ภารกิจของคุณ</b> ในฐานะ Helldiver ผู้มากประสบการ์ณ คือ <br /><br />
-                            <li><b>เปิดแหล่งจ่ายไฟ</b></li> 
-                            <br />
-                            <li><b>ตามหารหัสยิงที่หายสาบสูญ</b></li></p>
+                            <li><b>เปิดใช้งาน Super Weapon เพื่อยิงถล่มดาวที่เป็นฐานที่มันหลักของศัตรู</b></li> 
+                            </p>
                         </div> 
                         <div className="start-btn-container">
                             <div>
@@ -30,7 +29,7 @@ const Level2: React.FC = () => {
                                     <button className="startMission-btn">
                                         <b>
                                             <p className="startMission-text">
-                                                Start Mission
+                                                Find Launchcode
                                             </p>
                                         </b>
                                     </button>
