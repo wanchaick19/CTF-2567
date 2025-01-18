@@ -146,6 +146,20 @@ async function CheckLevel62(data: any) {
     .catch((e) => e.response);
 
 }
+
+
+
+async function CheckLevel7(data: any) {
+
+  return await axios
+
+    .put(`${apiUrl}/check-key-level7`, data, requestOptions)
+
+    .then((res) => res)
+
+    .catch((e) => e.response);
+
+}
 export {
   AjanParin,
   CheckAjanParin,
@@ -157,4 +171,7 @@ export {
   GetKeyLevel6,
   CheckLevel6,
   CheckLevel62,
+
+
+  CheckLevel7,
 };

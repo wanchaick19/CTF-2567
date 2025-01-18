@@ -51,6 +51,7 @@ const Level6: React.FC = () => {
         if (res.data.message === "correct") {
             setGif(true)
             getGif();
+            message.info("ได้รับข้อความจากหัวหน้า")
         } else {
             message.error("ผิดจ้า 🥹")
         }
