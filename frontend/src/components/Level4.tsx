@@ -64,6 +64,9 @@ const Level4: React.FC = () => {
                 newHint = 'กุญแจนั้นอยู่ใกล้คุณมากกว่าที่คิด';
                 break;
             case 3:
+                newHint = "กด F12 แล้วลองใหม่สิ";
+                break;
+            case 4:
                 newHint = "ใช้ RSA Decryption สิครับสุดหล่อต่อยตึง";
                 break;
             default:
@@ -232,6 +235,7 @@ const Level4: React.FC = () => {
                         <button onClick={() => handleHintClick(1)} className="hint-button">Hint 1</button>
                         <button onClick={() => handleHintClick(2)} className="hint-button">Hint 2</button>
                         <button onClick={() => handleHintClick(3)} className="hint-button">Hint 3</button>
+                        <button onClick={() => handleHintClick(4)} className="hint-button">Hint 4</button>
                     </div>
                     )
                     }
