@@ -3,13 +3,13 @@
     --G2: #1A644E;
     --G3: #04373B;
     --G4: #0A1A2F;
-    --P1: #D1CB95;
-    --P2: #ffcc00;
+    --A1: #D1CB95;
+    --A2: #ffcc00;
     --F1: "Lucida Console", "Courier New", monospace;
 }
 .MOtext{
     font-family:var(--F1);
-    color: var(--P2);
+    color: var(--A2);
     margin-left: 2%;
     margin-right: 2%;
     

@@ -98,7 +98,7 @@ func GetLV1EncryptedText(c *gin.Context) {
 
 	results := db.Table("flags").
 		Select("flags.flag").
-		Where("flags.id = 7 ").
+		Where("flags.id = 8").
 		Scan(&flag)
 
 	// Check for errors in the query
