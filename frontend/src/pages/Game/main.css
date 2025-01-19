@@ -55,7 +55,7 @@ body{
 
 .reset {
     position: fixed;
-    bottom: 10px;
+    bottom: 5px;
     right: 10px;
     color: #000;
     background-color: var(--P1);
@@ -80,9 +80,9 @@ body{
     display: flex;
     z-index: 1010;
 }
-.BtnNextpage p{
-    color: #000;
-    background-color: var(--P1);
+.BtnNextpagesub{
+    color: var(--P1);
+    background-color: transparent;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 0.9rem;
     padding: 5px 10px;
@@ -92,6 +92,15 @@ body{
     box-shadow: 0 0 10px #00000080;
     margin: 0 5px;
     cursor: pointer;
+    transition: 0.3s ease-in-out;
+    border: 2px solid var(--P1);
+}
+
+.BtnNextpagesub:hover{
+    box-shadow: 0 0 10px var(--P1);
+    background-color: var(--P1);
+    color: #000;
+    scale: 1.2;
 }
 
 .Page{
@@ -118,4 +127,22 @@ body{
     0%{
         opacity: 0;
     }
+}
+
+
+.Music{
+    position: fixed;
+    right: 10px;
+    bottom: 60px;
+    background-color: transparent;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 10px 10px;
+    border: 2px solid var(--P1);
+    border-radius: 20px;
+    opacity: 0.9;
+    transition: 0.4s ease-in-out;
+}
+.Music:hover{
+    opacity: 1;
+    box-shadow: 0 0 15px var(--P1);
 }

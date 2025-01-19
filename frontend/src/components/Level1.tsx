@@ -33,34 +33,37 @@ const Level1: React.FC = () => {
         <>
             {contextHolder}
             <div className='bg'>
-                <div className='box'>
-                    <h1 className='str'>Level 01</h1><br />
-                </div>
-                {/*Praying for you 🕯 Oh Great Mila 💗*/}
-                
-                <p className='hidden_wall'>using F12</p>
-                <div className='btn_bg'><button onClick={handleGetEncryptedText} className='btn'><p className='btn_text'>You can find <b className='enText_style'>encrypted</b> text Here! </p> </button></div>
-                <div className='box'>
-                    <p>ชื่อ <strong className='str'>16 อักษร</strong>เป็นกุญแจสู่คำตอบ<br />IV คือเวลาทั้งหมด (ลงท้ายด้วย 7)</p>
-                </div>
-                
-                <div className='btn_bg'>
-                    <a href="https://www.youtube.com/watch?v=poa_QBvtIBA" target='_blank'><button className='btn'><p className='btn_text'>key</p></button></a>
-                    <a href="https://anycript.com/crypto" target='_black'><button className='btn'><p className='btn_text'>Decrypt</p></button></a>
-                    <button className='btn_submit' onClick={handleAnsSub}><b className='btn_text_submit'>SUBMIT</b></button>
-                    <a href="https://www.youtube.com/watch?v=RN3QW9SVnds" target='_blank' ><button className='btn_skip'><p className='btn_text_skip'><b>SKIP</b></p></button></a>
+                    <div className='box'>
+                        <h1 className='str'>Level 01</h1><br />
+                    </div>
+                    {/*Praying for you 🕯 Oh Great Mila 💗*/}
                     
-                </div>
-                
-                <div className='box'>
-                    <input type="text"
-                        value={answer}
-                        placeholder='DECRYPTED TEXT'
-                        onChange={(e) => setAnswer(e.target.value)}
-                        className='input-text-sub'
-                    />
+                <div style={{margin:'10% auto 0',scale:'1.3'}}>
+                    <p className='hidden_wall'>using F12</p>
+                    <div className='btn_bg'><button onClick={handleGetEncryptedText} className='btn'><p className='btn_text'>You can find <b className='enText_style'>encrypted</b> text Here! </p> </button></div>
+                    <div className='box'>
+                        <p>ชื่อ <strong className='str'>16 อักษร</strong>เป็นกุญแจสู่คำตอบ<br />IV คือเวลาทั้งหมด (ลงท้ายด้วย 7)</p>
+                    </div>
                     
-                </div></div>
+                    <div className='btn_bg'>
+                        <a href="https://www.youtube.com/watch?v=poa_QBvtIBA" target='_blank'><button className='btn'><p className='btn_text'>key</p></button></a>
+                        <a href="https://anycript.com/crypto" target='_black'><button className='btn'><p className='btn_text'>Decrypt</p></button></a>
+                        <button className='btn_submit' onClick={handleAnsSub}><b className='btn_text_submit'>SUBMIT</b></button>
+                        <a href="https://www.youtube.com/watch?v=RN3QW9SVnds" target='_blank' ><button className='btn_skip'><p className='btn_text_skip'><b>SKIP</b></p></button></a>
+                        
+                    </div>
+                    
+                    <div className='box'>
+                        <input type="text"
+                            value={answer}
+                            placeholder='DECRYPTED TEXT'
+                            onChange={(e) => setAnswer(e.target.value)}
+                            className='input-text-sub'
+                        />
+                        
+                    </div>
+                </div>
+            </div>
         </>
     );
 };
