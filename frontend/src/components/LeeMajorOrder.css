@@ -14,9 +14,24 @@
     margin-right: 2%;
     
 }
+.bold-gold-text{
+    font-family:var(--F1);
+    color: var(--A2);
+}
 .MOinfoText{
     color: #acb5c1;
     text-align:left;
+    
+}
+.launch-his-text{
+    color: #acb5c1;
+    text-align:left;
+    float: left;
+}
+.safty-key{
+    color: #acb5c1;
+    text-align:left;
+    margin-right: 2%;
     
 }
 .MOcard{
@@ -34,15 +49,29 @@
     margin: 2px;
     padding: 20px;
 }
-
+.Lv2f{
+    background-color: #071221;
+    text-align: center;
+    margin: 2px;
+    padding: 20px;
+}
 .input-lunch-code{
     margin-top: 25px;
     font-family: var(--F1);
+}
+.input-lv2{
+    margin-top: 2px;
+    font-family: var(--F1);
+    float: right;
 }
 .start-btn-container{
     width: auto;
     margin: 2px;
     gap: 50px;
+}
+.btn-float-right{
+    float: right;
+    font-family: var(--F1);
 }
 .startMission-btn{
     background-color: var(--G2);
@@ -58,4 +87,10 @@
     color: var(--P1);
     text-shadow: 0px 2px black;
 
+}
+.imgforlv2{
+    height: auto;
+    width: 100%;
+    margin-bottom: 10px;
+    border-radius: 1px;
 }

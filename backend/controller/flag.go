@@ -157,6 +157,46 @@ func Lv1CheckAns(c *gin.Context) {
 		"message": "wrong",
 	})
 }
+func Lv2CheckAns(c *gin.Context) {
+	var request struct {
+		Answer string `json:"Answer"` // ใช้ JSON tag สำหรับการแปลงค่าจาก JSON
+	}
+
+	// Bind JSON payload
+	if err := c.ShouldBindJSON(&request); err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": "Invalid input: " + err.Error()})
+		return
+	}
+
+	// Define a struct to hold the result set from the database
+	var key struct {
+		Key string `json:"key"`
+	}
+
+	// Get the database connection
+	db := config.DB()
+
+	// Query the database to get the correct answer
+	if err := db.Table("keys").
+		Select("keys.key").
+		Where("keys.id = ?", 7).
+		Scan(&key).Error; err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to retrieve correct answer: " + err.Error()})
+		return
+	}
+
+	// ตรวจสอบคำตอบ
+	if request.Answer == key.Key {
+		c.JSON(http.StatusOK, gin.H{
+			"message": "Corr",
+		})
+		return
+	}
+
+	c.JSON(http.StatusOK, gin.H{
+		"message": "wrong",
+	})
+}
 
 // ========================================================== por ============================================================
 func CheckKeyLevel5(c *gin.Context) {

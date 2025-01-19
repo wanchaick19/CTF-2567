@@ -32,6 +32,8 @@ func main() {
 
 	r.PUT("/lv1-check-ans", controller.Lv1CheckAns)
 
+	r.PUT("/lv2-check-ans", controller.Lv2CheckAns)
+
 	r.GET("/get-key-level5", controller.GetkeyLevel5) // 5
 
 	r.PUT("/check-key-level5", controller.CheckKeyLevel5)
@@ -42,7 +44,7 @@ func main() {
 
 	r.PUT("/check-help-level6", controller.CheckKeyLevel6)
 
-	r.PUT("/check-key-level7", controller.CheckKeyLevel7)//7
+	r.PUT("/check-key-level7", controller.CheckKeyLevel7) //7
 
 	r.GET("/", func(c *gin.Context) {
 		c.String(http.StatusOK, "API RUNNING... PORT: %s", PORT)

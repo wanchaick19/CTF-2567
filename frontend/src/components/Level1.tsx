@@ -21,6 +21,7 @@ const Level1: React.FC = () => {
         const res = await Lv1CheckAns(ansToSend);
         if(res.data.message === "C"){
             messageApi.success("Praying for you 🕯 Oh Great Mila 💗");
+            localStorage.setItem("Level-1", "ture");
         }else{
             messageApi.error("Incorrect");
         }
@@ -40,7 +41,7 @@ const Level1: React.FC = () => {
                 <p className='hidden_wall'>using F12</p>
                 <div className='btn_bg'><button onClick={handleGetEncryptedText} className='btn'><p className='btn_text'>You can find <b className='enText_style'>encrypted</b> text Here! </p> </button></div>
                 <div className='box'>
-                    <p>ชื่อ <strong className='str'>16 อักษร</strong>เป็นกุญแจสู่คำตอบ<br />4 คือเวลาทั้งหมด (ลงท้ายด้วย 7)</p>
+                    <p>ชื่อ <strong className='str'>16 อักษร</strong>เป็นกุญแจสู่คำตอบ<br />IV คือเวลาทั้งหมด (ลงท้ายด้วย 7)</p>
                 </div>
                 
                 <div className='btn_bg'>
