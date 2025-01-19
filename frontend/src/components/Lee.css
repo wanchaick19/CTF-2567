@@ -15,7 +15,8 @@ body{
 }   
 .bg{
     background-color: var(--G4);
-    padding: 10% 0;
+    padding: 2% 0;
+    height: 110vh;
 }
 .box {
     background-color: #0a1a2f;

@@ -8,12 +8,13 @@
 }
 .Level3{
   background-color: var(--G3);
-  padding: 10% 0;
+  height: 100vh;
+  padding: 1% 0;
 }
 
 .Level4{
 background-color: var(--G4);
-padding: 10% 0;
+padding: 1% 0;
 }
 
 .fourarm{
