@@ -7,6 +7,7 @@ import Level4 from "../../components/Level4";
 import Level5 from "../../components/Level5";
 import Level6 from "../../components/Level6";
 import { message } from "antd";
+import Level7 from "../../components/Level7";
 
 
 const Main: React.FC = () => {
@@ -16,6 +17,7 @@ const Main: React.FC = () => {
     const userLevel4 = localStorage.getItem("Level-4");
     const userLevel5 = localStorage.getItem("Level-5");
     const userLevel6 = localStorage.getItem("Level-6");
+    const userLevel7 = localStorage.getItem("Level-7");
 
     const reset = () => {
         localStorage.clear();
@@ -34,6 +36,7 @@ const Main: React.FC = () => {
                 <div className={`Level-sub ${userLevel4 == 'ture' ? 'pass' : 'no'}`}>IV</div>
                 <div className={`Level-sub ${userLevel5 == 'ture' ? 'pass' : 'no'}`}>V</div>
                 <div className={`Level-sub ${userLevel6 == 'ture' ? 'pass' : 'no'}`}>VI</div>
+                <div className={`Level-sub ${userLevel7 == 'ture' ? 'pass' : 'no'}`}>VII</div>
             </div>
             <p className="reset" onClick={reset}>RESET</p>
             <Level1 />
@@ -42,6 +45,7 @@ const Main: React.FC = () => {
             <Level4 />
             <Level5 />
             <Level6 />
+            <Level7 />
         </>
     );
 };
