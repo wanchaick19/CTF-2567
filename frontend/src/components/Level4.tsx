@@ -48,6 +48,7 @@ const Level4: React.FC = () => {
             messageApi.success("เก่งมาดดด ;^;");
             localStorage.setItem("Level-4", "ture");
             setFinish(true);
+            setwin(true);
         }
         else {
             messageApi.error("ม่ายช่าย ม่ายช่าย");
@@ -90,7 +91,8 @@ const Level4: React.FC = () => {
     };
 
     
-
+    const userLevel4 = localStorage.getItem("Level-4");
+    const [win, setwin] = useState(false);
     return (
         <>
             {contextHolder}
@@ -243,6 +245,9 @@ const Level4: React.FC = () => {
                     {/* แสดง Hint */}
                     {hint && <div className="hint-display">{hint}</div>}
                 </div>
+                {(win || userLevel4) &&
+                    <div className='WinBG'></div>
+                }
             </div>
         </>
     );

@@ -72,17 +72,21 @@ const Level6: React.FC = () => {
             if (res.data.message === "correct") {
                 message.success("เก่งมาก 🥳👏🏻")
                 localStorage.setItem("Level-6", "ture");
+                setwin(true)
             } else {
                 message.error("ผิดจ้า 🥹")
             }
         }
     }
+
+    const userLevel6 = localStorage.getItem("Level-6");
+    const [win, setwin] = useState(false);
     return (
         <>
-            <div className='blackgroundLevel5' style={{ backgroundColor: 'var(--G4)' }}>
+            <div className='blackgroundLevel5'>
                 <h1 className='Level5' style={{ color: 'var(--P1)' }} onClick={Hint1}>LEVEL6</h1>
 
-                <p style={{ color: 'var(--G4)' }}>MDc5LTgtMTY0NTctMCBLIFBMVVM=</p>
+                <p style={{ color: 'var(--G4)', textAlign:'center'}}>MDc5LTgtMTY0NTctMCBLIFBMVVM=</p>
 
                 <div className='Phone'>
                     {Massage ?
@@ -246,7 +250,9 @@ const Level6: React.FC = () => {
                         <button className='submitLevel5'>Submit</button>
                     </form>
                 </div>
-
+                {(win || userLevel6) &&
+                    <div className='WinBG'></div>
+                }
             </div>
         </>
     );

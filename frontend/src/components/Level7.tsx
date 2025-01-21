@@ -66,6 +66,7 @@ const privateKEY = `-----BEGIN RSA PRIVATE KEY-----MIIBOwIBAAJBAKnWdW4FILY3C7Xfw
             if (res.data.message === "correct") {
                 message.success("เก่งมาก 🥳👏🏻")
                 localStorage.setItem("Level-7", "ture");
+                setwin(true);
             } else {
                 message.error("ผิดจ้า 🥹")
             }
@@ -128,7 +129,7 @@ const privateKEY = `-----BEGIN RSA PRIVATE KEY-----MIIBOwIBAAJBAKnWdW4FILY3C7Xfw
         setIsModalOpen(false);
     };
     //=========================================================================================
-
+    const [win, setwin] = useState(false);
 
 
 
@@ -137,7 +138,7 @@ const privateKEY = `-----BEGIN RSA PRIVATE KEY-----MIIBOwIBAAJBAKnWdW4FILY3C7Xfw
 
     return (
         <>
-            <div className='blackgroundLevel5' style={{ backgroundColor: 'var(--G3)' }}>
+            <div className='blackgroundLevel5' >
                 <h1 className='Level5' style={{ color: 'var(--P1)' }}>LEVEL7</h1>
                 <div style={{ margin: '0 10%' }}>
                     <h2 style={{ color: 'var(--P1)', fontSize: '40px' }}  >สู้เค้านะสนธยา</h2>
@@ -259,6 +260,9 @@ const privateKEY = `-----BEGIN RSA PRIVATE KEY-----MIIBOwIBAAJBAKnWdW4FILY3C7Xfw
                         <button className='submitLevel5'>Submit</button>
                     </form>
                 </div>
+                {(win || userLevel7) &&
+                    <div className='WinBG'></div>
+                }
             </div>
         </>
     );

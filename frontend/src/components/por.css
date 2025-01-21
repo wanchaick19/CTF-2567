@@ -21,7 +21,7 @@ body{
     --I3: #BC9455;
   }
 .blackgroundLevel5{
-    background-color: var(--G2);
+    background-color: transparent;
     padding: 1% 0;
 }
 .Level5 {
@@ -385,4 +385,19 @@ body{
     50%{transform: translateX(1500px);}
     51%{transform: translateX(1500px)scaleX(-1);}
     100%{transform: translateX(0px)scaleX(-1);}
+}
+
+
+.WinBG{
+    background-color: var(--G1);
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    z-index: -1;
+    opacity: 0;
+    animation: Win 0.8s ease-in-out forwards;
+}
+@keyframes Win {
+    100%{opacity: 1;}
 }

@@ -56,6 +56,7 @@ const Level5: React.FC = () => {
                 message.success("เก่งมาก 🥳👏🏻")
                 setMessage(true)
                 localStorage.setItem("Level-5", "ture");
+                setwin(true)
             } else {
                 message.error("ผิดจ้า 🥹")
             }
@@ -75,6 +76,8 @@ const Level5: React.FC = () => {
             .then(() => message.info('กำลังหา Key ให้นะ ', 2.5))
             .then(() => message.success('อะนี่! เอาไปใช้เลย : 2c70e12b7a0646f92279f427c7b38e7334d8e5389cff167a1dc30e73f826b683', 5));
     };
+
+    const [win, setwin] = useState(false);
     return (
         <>
             {contextHolder}
@@ -211,6 +214,9 @@ const Level5: React.FC = () => {
                         <button className='submitLevel5'>Submit</button>
                     </form>
                 </div>
+                {(win || userLevel5) &&
+                    <div className='WinBG'></div>
+                }
             </div>
         </>
     );

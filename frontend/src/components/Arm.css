@@ -7,13 +7,13 @@
   --P1: #D1CB95;
 }
 .Level3{
-  background-color: var(--G3);
+  background-color: transparent;
   height: 100vh;
   padding: 1% 0;
 }
 
 .Level4{
-background-color: var(--G4);
+background-color: transparent;
 padding: 1% 0;
 }
 
