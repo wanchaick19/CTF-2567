@@ -16,6 +16,9 @@ body{
     --G4: #0A1A2F;
     --P1: #D1CB95;
     --P2: #FA9EC8;
+    --I1: #FCF5B5;
+    --I2: #E7C17C;
+    --I3: #BC9455;
   }
 .blackgroundLevel5{
     background-color: var(--G2);
@@ -269,4 +272,117 @@ body{
 .Csub:hover{
     background-color: var(--P2);
     color: #000;
+}
+
+
+.BGgame {
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.intro{
+    color: var(--I1);
+    -webkit-text-stroke: 1px var(--I3);
+    text-shadow: 0 0 15px var(--I3);
+    text-align: center;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    letter-spacing: 15px;
+    cursor:context-menu;
+}
+
+
+.Animaintro1{
+    transition: 0.5s ease-in-out;
+    animation: Animaintro1 1s ease-in-out;
+}
+.Animaintro1:hover {
+    scale: 1.1;
+    letter-spacing: 40px;
+}
+.Animaintro2{
+    opacity: 0;
+    transition: 0.5s ease-in-out;
+    animation: Animaintro2 1s ease-in-out 1s forwards;
+}
+.Animaintro2:hover {
+    scale: 1.1;
+}
+.Animaintro3{
+    opacity: 0;
+    transition: 0.5s ease-in-out;
+    animation: Animaintro3 1s ease-in-out 2s forwards;
+}
+.Animaintro3:hover {
+    scale: 1.1;
+    letter-spacing: 40px;
+}
+.Animaintro4{
+    transition: 0.5s ease-in-out;
+    animation: Animaintro4 1.5s ease-in-out 2s infinite;
+}
+.Animaintro4:hover {
+    scale: 1.1;
+}
+
+@keyframes Animaintro1 {
+    from {
+        transform: translateY(-100%);
+        filter: blur(20px);
+        opacity: 0;
+    }
+}
+@keyframes Animaintro2 {
+    100%{opacity: 1;}
+}
+@keyframes Animaintro3 {
+    100%{opacity: 1;}
+}
+@keyframes Animaintro4 {
+    50%{scale: 1.5;}
+}
+
+.NPC{
+    position: fixed;
+    bottom: 10%;
+    filter: drop-shadow(0px 10px 5px #222);
+    animation: NPC 30s linear infinite;
+}
+@keyframes NPC {
+    0%{transform: translateX(0px);}
+    50%{transform: translateX(1500px);}
+    51%{transform: translateX(1500px)scaleX(-1);}
+    100%{transform: translateX(0px)scaleX(-1);}
+}
+.NPC2{
+    position: fixed;
+    bottom: 9%;
+    filter: drop-shadow(0px 10px 5px #222);
+    animation: NPC2 32s linear 1s infinite;
+}
+@keyframes NPC2 {
+    0%{transform: translateX(0px);}
+    50%{transform: translateX(1500px);}
+    51%{transform: translateX(1500px)scaleX(-1);}
+    100%{transform: translateX(0px)scaleX(-1);}
+}
+.NPC3{
+    position: fixed;
+    bottom: 7%;
+    filter: drop-shadow(0px 10px 5px #222);
+    animation: NPC3 35s linear 2s infinite;
+}
+@keyframes NPC3 {
+    0%{transform: translateX(0px);}
+    50%{transform: translateX(1500px);}
+    51%{transform: translateX(1500px)scaleX(-1);}
+    100%{transform: translateX(0px)scaleX(-1);}
 }

@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./main.css";
+import Level0 from "../../components/Level0";
 import Level1 from "../../components/Level1";
 import Level2 from "../../components/Level2";
 import Level3 from "../../components/Level3";
@@ -47,7 +48,7 @@ const Main: React.FC = () => {
         }, 2000);
     };
 
-    const [pageLevel, setLevel] = useState(1);
+    const [pageLevel, setLevel] = useState(0);
     const totalPages = 7;
 
 
@@ -93,7 +94,7 @@ const Main: React.FC = () => {
             </div>
             <div className="BtnNextpage">
                 {/* ปุ่มย้อนกลับ */}
-                {pageLevel > 1 && (
+                {pageLevel > 0 && (
                     <p className="BtnNextpagesub" onClick={() => setLevel(pageLevel - 1)}>◀ Previous</p>
                 )}
 
@@ -104,6 +105,9 @@ const Main: React.FC = () => {
                 )}
             </div>
 
+            {pageLevel == 0 &&
+                <Level0 />
+            }
             {pageLevel == 1 &&
                 <div className="animation-Next-page">
                     <Level1 />
